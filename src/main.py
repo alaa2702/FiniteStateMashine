@@ -1,8 +1,8 @@
 """
 Main module for the Finite State Machine
 """
-from src.FSMFileReader import FSMFileReader
-from src.DeterministicFiniteAutomata import DeterministicFiniteAutomata
+from FSMFileReader import FSMFileReader
+from DeterministicFiniteAutomata import DeterministicFiniteAutomata
 
 
 class Main:
@@ -44,10 +44,14 @@ class Main:
         # Print the DFA
         print(self.fsm)
         # make a loop to check the input string
+        self.check_input_string()
         while True:
-            self.check_input_string()
-            if input("Do you want to check another string? (y/n): ") == "n":
+            
+            ans = input("Do you want to check another string? (y/n): ") 
+            if ans == "n":
                 break
+            elif ans == "y":
+                self.check_input_string()
         print("Exiting the Finite State Machine.")
 
 
